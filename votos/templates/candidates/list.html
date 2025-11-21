@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h2>Lista de Candidatos</h2>
+
+<a href="/candidates/create/">➕ Registrar nuevo candidato</a>
+
+<table>
+    <tr>
+        <th>Nombre</th>
+        <th>Partido</th>
+        <th>Votos</th>
+        <th>Acciones</th>
+    </tr>
+
+    {% for c in candidates %}
+    <tr>
+        <td>{{ c.name }}</td>
+        <td>{{ c.party }}</td>
+        <td>{{ c.votes }}</td>
+        <td>
+            <a href="/candidates/{{ c.id }}/">Detalles</a> |
+            <a class="delete-btn" href="/candidates/{{ c.id }}/delete/">Eliminar</a>
+        </td>
+    </tr>
+    {% endfor %}
+</table>
+{% endblock %}

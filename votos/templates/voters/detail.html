@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h2>Detalles del Votante</h2>
+
+<p><strong>Nombre:</strong> {{ voter.name }}</p>
+<p><strong>Email:</strong> {{ voter.email }}</p>
+{% if voter.has_voted == True %}
+<p><strong>¿Ha votado?</strong> Ya ha votado</p>
+{% else %}
+<p><strong>¿Ha votado?</strong> No ha votado</p>
+{% endif%}
+<a href="/voters/">Volver</a>
+{% endblock %}

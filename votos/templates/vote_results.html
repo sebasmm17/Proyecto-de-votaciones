@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h1>Resultados de la votación</h1>
+
+<p><strong>Total de votos emitidos:</strong> {{ total_votes }}</p>
+<p><strong>Votantes:</strong> {{ voters_who_voted }} de {{ total }}</p>
+
+<table border="1" cellpadding="10">
+    <thead>
+        <tr>
+            <th>Candidato</th>
+            <th>Partido</th>
+            <th>Votos</th>
+            <th>Porcentaje</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for item in candidates %}
+        <tr>
+            <td>{{ item.candidate.name }}</td>
+            <td>{{ item.candidate.party }}</td>
+            <td>{{ item.votes }}</td>
+            <td>{{ item.percentage }}%</td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+{% endblock %}

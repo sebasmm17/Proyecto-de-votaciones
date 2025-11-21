@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h2>Lista de Votantes (que NO han votado)</h2>
+
+<a href="/voters/create/">➕ Registrar nuevo votante</a>
+
+<table>
+    <tr>
+        <th>Nombre</th>
+        <th>Email</th>
+        <th>Acciones</th>
+    </tr>
+
+    {% for v in voters %}
+    <tr>
+        <td>{{ v.name }}</td>
+        <td>{{ v.email }}</td>
+        <td>
+            <a href="/voters/{{ v.id }}/">Detalles</a> |
+            <a class="delete-btn" href="/voters/{{ v.id }}/delete/">Eliminar</a>
+        </td>
+    </tr>
+    {% endfor %}
+</table>
+{% endblock %}

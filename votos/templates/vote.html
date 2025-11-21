@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h2>Registrar Voto</h2>
+
+{% if error %}
+<div class="error">{{ error }}</div>
+{% endif %}
+
+<form method="POST">
+    {% csrf_token %}
+
+    <label>Seleccionar votante</label>
+    <select name="voter">
+        {% for v in voters %}
+        <option value="{{ v.id }}">{{ v.name }} ({{ v.email }})</option>
+        {% endfor %}
+    </select>
+
+    <label>Seleccionar candidato</label>
+    <select name="candidate">
+        {% for c in candidates %}
+        <option value="{{ c.id }}">{{ c.name }} - {{ c.party }}</option>
+        {% endfor %}
+    </select>
+
+    <button type="submit">Votar</button>
+</form>
+{% endblock %}

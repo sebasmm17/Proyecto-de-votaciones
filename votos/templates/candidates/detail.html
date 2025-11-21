@@ -1,0 +1,11 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h2>Detalles del Candidato</h2>
+
+<p><strong>Nombre:</strong> {{ candidate.name }}</p>
+<p><strong>Partido:</strong> {{ candidate.party }}</p>
+<p><strong>Votos:</strong> {{ candidate.votes }}</p>
+
+<a href="/candidates/">Volver</a>
+{% endblock %}

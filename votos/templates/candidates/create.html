@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h2>Registrar Candidato</h2>
+
+{% if error %}
+<div class="error">{{ error }}</div>
+{% endif %}
+
+<form method="POST">
+    {% csrf_token %}
+    <label>Nombre</label>
+    <input type="text" name="name">
+
+    <label>Partido</label>
+    <input type="text" name="party">
+
+    <button type="submit">Guardar</button>
+</form>
+{% endblock %}

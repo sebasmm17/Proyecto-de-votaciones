@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Sistema de Votación</title>
+    <link rel="stylesheet" href="/static/css/styles.css">
+</head>
+<body>
+
+<div class="navbar">
+    <a href="/">Inicio</a>
+    <a href="/voters/">Votantes</a>
+    <a href="/candidates/">Candidatos</a>
+    <a href="/vote/">Votar</a>
+    <a href="/results/">Resultados</a>
+</div>
+
+<div class="container">
+    {% block content %}
+    {% endblock %}
+</div>
+
+</body>
+</html>
